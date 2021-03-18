@@ -7,7 +7,9 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "mssql": "^6.2.2"
+    "knex": "^0.95.2",
+    "mssql": "^6.2.2",
+    "pg": "^8.5.1"
   },
   "devDependencies": {},
   "scripts": {
