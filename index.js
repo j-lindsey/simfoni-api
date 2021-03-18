@@ -13,7 +13,7 @@ app.use(express.static(path.join(path.resolve(__dirname, '../'))));
 
 /*landingpage route*/
 app.get('/', (req, res) => {
-    res.sendFile('this is working');
+    res.json('this is working');
 })
 
 
