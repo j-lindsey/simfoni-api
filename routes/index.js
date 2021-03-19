@@ -24,6 +24,7 @@ const db = knex({
     ssl: {
       rejectUnauthorized: false
     }
+  }
 });
 
 app.use(session({
@@ -37,6 +38,7 @@ app.use(session({
     secure: false
   }
 }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
