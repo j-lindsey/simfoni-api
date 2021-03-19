@@ -229,21 +229,16 @@ app.post('/profile/logout', redirectLogin, (req, res) => {
   return res.status(200).redirect('https://vast-sands-15850.herokuapp.com/login/form');
 })
 
+//sending html on login
+app.get('/goals/:id', (req, res) => {
+  console.log('goals/id', req.params);
+  res.redirect(`https://j-lindsey.github.io/simfoni-frontend/html/entrepreneur.html/${req.params.id}`);
+});
 
-
-app.get('/profile/:id', (req, res) => {
+app.get('login/profile/:id', (req, res) => {
   console.log(req.params);
   let id = Number(req.params.id);
-
-  db.column('selectedgoal').select()
-    .from('goals')
-    .join('membergoal', 'selectedgoal.selectedid', '=', 'membergoal.selectedid')
-    .where({
-      memberid: id
-    }).then(results => {
-      console.log(results);
-      res.json(results);
-    })
+  res.redirect('https://vast-sands-15850.herokuapp.com/goals/' + req.params.id);
 });
 
 
