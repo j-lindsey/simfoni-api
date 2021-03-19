@@ -55,6 +55,7 @@ app.get('/goals', (req, res) => {
     .limit(30)
     .offset(0)
     .then(results => {
+      console.log(results);
       res.json(results);
     });
 });
@@ -209,7 +210,7 @@ app.post('/entrepregistration/newcust', function (req, res) {
       }).then(response => {
         console.log(response[0]);
         req.session.userID = response[0].memberid;
-        res.redirect('http://localhost:3000/goals/' + req.session.userID);
+        res.redirect('https://vast-sands-15850.herokuapp.com/goals/' + req.session.userID);
       })
       .catch(err => res.status(400).json('unable to register'))
   });
@@ -225,7 +226,7 @@ app.post('/profile/logout', redirectLogin, (req, res) => {
     }
   });
   res.clearCookie(SESS_NAME, { path: '/' });
-  return res.status(200).redirect('http://localhost:3000/login/form');
+  return res.status(200).redirect('https://vast-sands-15850.herokuapp.com/login/form');
 })
 //sending html on login
 app.get('/goals/:id', (req, res) => {
