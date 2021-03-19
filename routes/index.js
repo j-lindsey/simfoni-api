@@ -228,11 +228,7 @@ app.post('/profile/logout', redirectLogin, (req, res) => {
   res.clearCookie(SESS_NAME, { path: '/' });
   return res.status(200).redirect('https://vast-sands-15850.herokuapp.com/login/form');
 })
-//sending html on login
-app.get('/goals/:id', (req, res) => {
-  console.log('goals/id', req.params);
-  res.sendFile(path.resolve('../html/entrepreneur.html'));
-});
+
 
 
 app.get('/profile/:id', (req, res) => {
