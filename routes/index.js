@@ -174,7 +174,7 @@ app.post('/login/vlogin', function (req, res) {
                 console.log(result);
                 req.session.userID = result[0].memberid;
                 console.log(req.session);
-                res.redirect('/login/profile/' + req.session.userID);
+                res.redirect('/goals/' + req.session.userID);
               })
           }
         });
@@ -235,11 +235,7 @@ app.get('/goals/:id', (req, res) => {
   res.redirect(`https://j-lindsey.github.io/simfoni-frontend/html/entrepreneur.html/${req.params.id}`);
 });
 
-app.get('login/profile/:id', (req, res) => {
-  console.log(req.params);
-  let id = Number(req.params.id);
-  res.redirect('https://vast-sands-15850.herokuapp.com/goals/' + req.params.id);
-});
+
 
 
 module.exports = app;
